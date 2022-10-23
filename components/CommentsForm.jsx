@@ -76,7 +76,8 @@ const CommentsForm = ({ slug }) => {
 
   return (
     <div className="bg-white shadow-lg rounded-lg p-8 pb-12 mb-8">
-      <h3 className="text-xl mb-8 font-semibold border-b pb-4">Leave a Reply</h3>
+      <h3 className="text-xl mb-8 font-semibold border-b pb-4">メッセージを残す</h3> 
+      {/* Leave a message */}
       <div className="grid grid-cols-1 gap-4 mb-4">
         <textarea value={formData.comment} onChange={onInputChange} className="p-4 outline-none w-full rounded-lg h-40 focus:ring-2 focus:ring-purple-100 bg-gray-100 text-gray-700" name="comment" placeholder="Comment" />
       </div>
@@ -87,13 +88,16 @@ const CommentsForm = ({ slug }) => {
       <div className="grid grid-cols-1 gap-4 mb-4">
         <div>
           <input checked={formData.storeData} onChange={onInputChange} className="w-4 h-4 text-purple-400  bg-gray-100 rounded border-gray-300" type="checkbox" id="storeData" name="storeData" value="true" />
-          <label className="text-gray-500 cursor-pointer" htmlFor="storeData"> Save my name, email in this browser for the next time I comment.</label>
+          <label className="text-gray-500 cursor-pointer" htmlFor="storeData"> 次にコメントするときのために、このブラウザに私の名前、電子メールを保存しておいてください。</label>
+          {/* Save my name, email in this browser for the next time I comment. */}
         </div>
       </div>
-      {error && <p className="text-xs text-center sm:text-left text-red-500">All fields are mandatory</p>}
+      {error && <p className="text-xs text-center sm:text-left text-red-500">すべての項目は必須です</p>}
+      {/* All fields are mandatory */}
       <div className="mt-8 text-center sm:text-left">
         <button type="button" onClick={handlePostSubmission} className="transition duration-200 ease hover:bg-purple-500 inline-block bg-purple-400  text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">Post Comment</button>
-        {showSuccessMessage && <span className="text-xl sm:float-right float-center font-semibold mt-3 text-green-500">Comment submitted for review</span>}
+        {showSuccessMessage && <span className="text-xl sm:float-right float-center font-semibold mt-3 text-green-500">審査に提出されたコメント</span>}
+        {/* Comment submitted for review */}
       </div>
     </div>
   );

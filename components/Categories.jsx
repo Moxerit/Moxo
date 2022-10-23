@@ -14,7 +14,8 @@ const Categories = () => {
 
   return (
     <div className="bg-white shadow-lg rounded-lg p-8 pb-12 mb-8">
-      <h3 className="text-xl mb-8 font-semibold pb-4">Categories</h3>
+      <h3 className="text-xl mb-8 font-semibold pb-4">カテゴリー Categories</h3>
+      {/* Categories */}
       {categories?.map((category, index) => (
         <Link key={index} href={`/category/${category.slug}`}>
           <span className={`cursor-pointer block border-b pb-3 mb-3`}>
